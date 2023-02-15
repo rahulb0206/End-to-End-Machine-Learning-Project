@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>GPA/SAT Predictor</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Enter what you want to predict</h1>
+     
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('enter_y')}}"method="post">
+    	<input type="text" name="SAT" placeholder="Enter 'SAT' or 'GPA'"  />
+      <br>
+        <button type="submit" class="btn">Submit</button>
+        <br>
+        <br>
+    </form>
+    
+    <br>
+    <br>
+    <br>
+    <button id="myButton" class="float-left submit-button" >Next</button>
+ </div>
+ <script type="text/javascript">
+  
+  document.getElementById("myButton").onclick = function ()
+  {
+      location.href = "http://192.168.0.103:107/page4";
+  }; 
+</script> 
+</body>
+</html>

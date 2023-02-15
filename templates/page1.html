@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Marks Predictor</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Upload the Dataset</h1>
+    <form id='myForm' enctype="multipart/form-data">
+        <input type="file" id="myFile" name="file"required="required">
+        <input type="submit" id="submit" name="submit" value="Upload File Now" required="required">
+    </form>
+    <button id="myButton" class="float-left submit-button" >Next</button>
+</div>
+    
+      
+    
+
+     
+ <script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "http://192.168.0.103:107/page2";
+    }; 
+ </script> 
+
+ <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+ <script>
+    alert('WEB PAGE READY')
+    $('#myForm').on('submit', function(e){
+        alert();
+        e.preventDefault();
+      
+
+var form_data = new FormData($('#myForm')[0]);
+$.ajax({
+    type:'POST',
+    url:'http://192.168.0.103:107/upload',
+    processData: false,
+    contentType: false,
+    async: false,
+    cache: false,
+    data : form_data,
+    success: function(response){
+
+    }
+
+});
+    })
+
+
+ </script>
+</body>
+</html>

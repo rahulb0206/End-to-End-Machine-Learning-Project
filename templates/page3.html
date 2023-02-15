@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>CO2 Emission Predictor</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Enter the hyperparameters</h1>
+         <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <br>
+        <label for="input1" class="form-label">Intercept</label>
+    	<input type="text" name="Intercept" placeholder="True or False" required="required" />
+        <br>
+        <br>
+        <label for="input2" class="form-label">Normalize</label>.
+        <input type="text" name="Normalize" placeholder="True or False" required="required" />
+        <br>
+        <br>
+    </form>
+    <form method="POST" action="page4.html"required="required">
+        <input type="submit"/>
+
+ </div>
+
+
+</body>
+</html>
